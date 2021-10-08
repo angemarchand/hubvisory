@@ -14,9 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', function (req, res) {
-    // let data = req.query
-    // axios.defaults.headers.common['x-themoviedb-key'] = "7456d34ac2a1a257877b3851d2e7aa57";
-    axios.get("https://api.themoviedb.org/4/list/5?page=1&api_key=7456d34ac2a1a257877b3851d2e7aa57")
+    axios.get("https://api.themoviedb.org/4/list/1?page=1&api_key=7456d34ac2a1a257877b3851d2e7aa57")
     .then(response => {
         //console.log(response.data)
         return res.status(200).send(response.data) 
@@ -25,6 +23,7 @@ app.get('/', function (req, res) {
         console.log(error)
     })
 })
+
 
 module.exports = app;
 
