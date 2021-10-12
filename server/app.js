@@ -6,7 +6,8 @@ require('dotenv').config();
 const axios = require('axios');
 const { response } = require('express');
 
-
+const questions = require('./questions');
+// console.log(questions)
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -14,14 +15,17 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', function (req, res) {
-    axios.get("https://api.themoviedb.org/4/list/1?page=1&api_key=7456d34ac2a1a257877b3851d2e7aa57")
+    axios.get("https://opentdb.com/api.php?amount=10&category=11&type=multiple")
     .then(response => {
-        //console.log(response.data)
+        // console.log(response.data)
         return res.status(200).send(response.data) 
     })
     .catch((error) => {
         console.log(error)
     })
+})
+app.get('/question', function (req, res) {
+   return res.send(questions)
 })
 
 
