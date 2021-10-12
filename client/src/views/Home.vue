@@ -30,7 +30,7 @@
                               px-5 py-2 font-bold tracking-wide rounded-full"
                               v-show="selectedAns != '' && index == counted - 1"
                               @click="showResult "> 
-                              Fin &gt; 0665106537  
+                              Fin &gt;  
                       </button>
                   </div>
                 </div>
